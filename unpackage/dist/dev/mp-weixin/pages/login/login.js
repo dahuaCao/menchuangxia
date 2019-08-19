@@ -369,7 +369,7 @@ var _default = { data: function data() {return {// isCanUse: uni.getStorageSync(
     },
 
 
-    userLogin: function userLogin(userInfo) {var code = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';var signature = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';var iv = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+    userLogin: function userLogin(userInfo) {var code = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';var encryptedData = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';var iv = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
 
       var _this = this;
       _this.$http.request({
@@ -378,7 +378,7 @@ var _default = { data: function data() {return {// isCanUse: uni.getStorageSync(
         data: {
           code: code,
           userInfo: JSON.parse(userInfo),
-          signature: signature,
+          encryptedData: encryptedData,
           iv: iv,
           recommendId: '' } }).
 

@@ -1,5 +1,5 @@
-// let webUrl = 'https://www.xyzcwl.com/api/';
-let webUrl = 'http://192.168.31.195:8081/api/';
+let webUrl = 'https://www.xyzcwl.com/api/';
+// let webUrl = 'http://192.168.31.195:8081/api/';
 export default {
 	AuthLoginByWeixin: webUrl + 'auth/login_by_weixin', //微信登录
 	GetYzCode: webUrl + 'auth/regCaptcha', //手机登了验证码获取

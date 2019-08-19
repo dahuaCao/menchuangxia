@@ -250,7 +250,7 @@
 			},
 			
 			// #endif
-			userLogin(userInfo, code='',signature='',iv='') {
+			userLogin(userInfo, code='',encryptedData='',iv='') {
 				
 				let _this = this;
 				_this.$http.request({
@@ -259,7 +259,7 @@
 					data: {
 						code: code,
 						userInfo: JSON.parse(userInfo),
-						signature:signature,
+						encryptedData:encryptedData,
 						iv:iv,
 						recommendId: ''
 					}

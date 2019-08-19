@@ -2129,9 +2129,9 @@ createPage(_productDetail.default);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // let webUrl = 'https://www.xyzcwl.com/api/';
-var webUrl = 'http://192.168.31.195:8081/api/';var _default =
-{
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var webUrl = 'https://www.xyzcwl.com/api/';
+// let webUrl = 'http://192.168.31.195:8081/api/';
+var _default = {
   AuthLoginByWeixin: webUrl + 'auth/login_by_weixin', //微信登录
   GetYzCode: webUrl + 'auth/regCaptcha', //手机登了验证码获取
   AuthLoginByMobile: webUrl + 'auth/login_by_sms', //微信登录
