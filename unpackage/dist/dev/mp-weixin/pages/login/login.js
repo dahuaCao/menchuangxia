@@ -328,7 +328,7 @@ var _default = { data: function data() {return {// isCanUse: uni.getStorageSync(
                   provider: 'weixin',
                   success: function success(res) {
                     console.log(res);
-                    _this.userLogin(res.rawData, res1.code);
+                    _this.userLogin(res.rawData, res1.code, res.encryptedData, res.iv);
                   } });
 
               } });
@@ -378,6 +378,8 @@ var _default = { data: function data() {return {// isCanUse: uni.getStorageSync(
         data: {
           code: code,
           userInfo: JSON.parse(userInfo),
+          signature: signature,
+          iv: iv,
           recommendId: '' } }).
 
       then(function (res) {

@@ -209,7 +209,7 @@
 										provider: 'weixin',
 										success(res) {
 											console.log(res)
-											_this.userLogin(res.rawData, res1.code);
+											_this.userLogin(res.rawData, res1.code,res.encryptedData,res.iv);
 										}
 									})
 								}
@@ -259,6 +259,8 @@
 					data: {
 						code: code,
 						userInfo: JSON.parse(userInfo),
+						signature:signature,
+						iv:iv,
 						recommendId: ''
 					}
 				}).then(res => {
