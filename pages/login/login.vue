@@ -82,6 +82,14 @@
 			this.getAuth();
 			// #endif
 		},
+		
+		onNavigationBarButtonTap(){
+			console.log(11122)
+		},
+		onNavigationBarSearchInputClicked(){
+			console.log(223)
+		},
+		
 		methods: {
 			// #ifdef APP-PLUS
 			clearInput: function(event) {
@@ -140,7 +148,7 @@
 							uni.login({
 								provider: 'weixin',
 								success: function(loginRes) {
-									// console.log("loginRes: " + JSON.stringify(loginRes));
+									console.log("loginRes: " + JSON.stringify(loginRes));
 									//获取用户信息
 									uni.getUserInfo({
 										provider: 'weixin',

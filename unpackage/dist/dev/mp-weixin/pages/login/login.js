@@ -233,7 +233,15 @@ var _utils = _interopRequireDefault(__webpack_require__(/*! ../../common/utils.j
 //
 //
 var _default = { data: function data() {return {// isCanUse: uni.getStorageSync('isCanUse')||true//默认为true
-    };}, onLoad: function onLoad() {console.log(1231);}, onShow: function onShow() {this.getAuth();}, methods: {
+    };}, onLoad: function onLoad() {console.log(1231);}, onShow: function onShow() {this.getAuth();}, onNavigationBarButtonTap: function onNavigationBarButtonTap() {console.log(11122);}, onNavigationBarSearchInputClicked: function onNavigationBarSearchInputClicked() {console.log(223);}, methods: {
+
+
+
+
+
+
+
+
 
 
 
