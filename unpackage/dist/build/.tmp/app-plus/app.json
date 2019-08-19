@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/product/productNews/newList/newList",
+    "pages/index/index",
+    "pages/home/index/index",
+    "pages/orders/index/index",
+    "pages/mine/index/index",
+    "pages/shopCart/index/index",
+    "pages/product/productNews/newDetail/newDetail",
+    "pages/product/goods/goodLists/goodLists",
+    "pages/mine/address/addressManger/addressManger",
+    "pages/mine/address/addAddress/addAddress",
+    "pages/mine/helpCenter/helpCenter",
+    "pages/product/productCenter/productCenter",
+    "pages/product/productLists/productLists",
+    "pages/home/areaSelect/areaSelect",
+    "pages/product/productDetail/productDetail",
+    "pages/shopCart/applyOrders/applyOrders",
+    "pages/orders/reservatOrders/reservatOrders",
+    "pages/orders/reservarOrderDetail/reservarOrderDetail"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "门窗宝",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#3C3737",
+    "selectedColor": "#5465F2",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index/index",
+        "text": "首页",
+        "iconPath": "static/tab/homePage.png",
+        "selectedIconPath": "static/tab/homePage-s.png"
+      },
+      {
+        "pagePath": "pages/orders/index/index",
+        "text": "订单",
+        "iconPath": "static/tab/order.png",
+        "selectedIconPath": "static/tab/order-s.png"
+      },
+      {
+        "pagePath": "pages/shopCart/index/index",
+        "text": "购物车",
+        "iconPath": "static/tab/shopCart.png",
+        "selectedIconPath": "static/tab/shopCart-s.png"
+      },
+      {
+        "pagePath": "pages/mine/index/index",
+        "text": "我的",
+        "iconPath": "static/tab/personal.png",
+        "selectedIconPath": "static/tab/personal-s.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 3000
+  },
+  "nvueCompiler": "weex",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "mengChuangbao",
+  "compilerVersion": "2.2.0",
+  "usingComponents": {}
+}

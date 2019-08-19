@@ -1,0 +1,54 @@
+.mb-icon {
+		font-family: iconfont;
+		font-size: 24px;
+		font-weight: normal;
+		font-style: normal;
+		line-height: 1;
+		display: inline-block;
+		text-decoration: none;
+		-webkit-font-smoothing: antialiased;
+	}
+	.mb-icon.mb-active {
+		color: #007aff;
+	}
+	.mb-flex{
+		display: flex;
+	}
+	.mb-flex-column{
+		flex-direction: column;
+	}
+	.mb-flex-center{
+		justify-content: center;
+		align-items: center;
+	}
+	.mb-flex-h-center{
+		justify-content: center;
+	}
+	.mb-flex-v-center{
+		align-items: center;
+	}
+	.mb-flex-h-bt{
+		justify-content: space-between;
+	}
+	.mb-form-item{
+		flex: 1;
+	}
+	.mb-input {
+		height: 50upx;
+		padding: 15upx 25upx;
+		line-height:50upx;
+		font-size:28upx;
+		background:#FFF;
+		flex: 1;
+	}
+	.mb-content-body{
+		width:100%;
+	}
+	.pos-bg{
+		height: 10upx;
+		width: 100%;
+		background: #F5F5F5;
+	}
+	view{
+		box-sizing: border-box;
+	}

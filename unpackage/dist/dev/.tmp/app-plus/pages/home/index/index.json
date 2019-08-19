@@ -1,0 +1,27 @@
+{
+  "navigationBarBackgroundColor": "#43A0F4",
+  "scrollIndicator": "none",
+  "titleNView": {
+    "searchInput": {
+      "align": "center",
+      "backgroundColor": "#F5F5F5",
+      "borderRadius": "6px",
+      "placeholder": "产品搜索",
+      "disabled": true
+    },
+    "buttons": [
+      {
+        "color": "#FFFFFF",
+        "float": "left",
+        "text": "呼和浩特市",
+        "select": true,
+        "width": "auto",
+        "fontSize": "18px"
+      },
+      {}
+    ]
+  },
+  "usingComponents": {
+    "image-loader": "/components/imageLoader"
+  }
+}

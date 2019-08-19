@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "已预约",
+  "usingComponents": {
+    "time-line": "/components/timeLine"
+  }
+}

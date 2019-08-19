@@ -1,0 +1,82 @@
+<template>
+	<view class="uni-icon" :class="'icon-' + type" :style="{ color: color, 'font-size': uSize + 'px' }" @click="_onClick"></view>
+</template>
+
+<script>
+	export default {
+		name: 'uni-icon',
+		props: {
+			type: {
+				type: String,
+				default: ''
+			},
+			color: {
+				type: String,
+				default: '#333333'
+			},
+			size: {
+				type: [Number, String],
+				default: 16
+			}
+		},
+		data() {
+			return {
+
+			};
+		},
+		computed: {
+			uSize() {
+				let size = this.size;
+				return uni.upx2px(size);
+			}
+		},
+		methods: {
+			_onClick() {
+				this.$emit('click');
+			}
+		}
+	}
+</script>
+
+<style>
+	@font-face {
+		font-family: "uni-icon";
+		font-weight: normal;
+		font-style: normal;
+		src: url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2');
+	}
+
+	uni-icon {
+		line-height: 1;
+	}
+
+	.uni-icon {
+		font-family: "uni-icon" !important;
+		font-style: normal;
+		line-height: 1;
+		display: inline-block;
+		text-decoration: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	.icon-xingxing:before {
+		content: "\e632";
+	}
+
+	.icon-guanbi:before {
+		content: "\e612";
+	}
+
+	.icon-shanchu-m:before {
+		content: "\e608";
+	}
+
+	.icon-zanwuchiyouzhongdingdan:before {
+		content: "\e766";
+	}
+
+	.icon-zanwuyouhuiquan:before {
+		content: "\e602";
+	}
+</style>

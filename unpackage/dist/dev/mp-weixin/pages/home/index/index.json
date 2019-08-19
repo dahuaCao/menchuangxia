@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "门窗宝",
+  "usingComponents": {
+    "image-loader": "/components/imageLoader"
+  }
+}

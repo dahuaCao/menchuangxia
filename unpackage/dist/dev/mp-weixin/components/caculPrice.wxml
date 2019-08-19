@@ -1,0 +1,1 @@
+<view><view>{{price+".00元"}}</view></view>

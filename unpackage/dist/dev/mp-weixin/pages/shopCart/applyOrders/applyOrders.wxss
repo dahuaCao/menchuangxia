@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+page,
+.container {
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+}
+.address {
+  padding: 30rpx;
+}
+.address .lf {
+    width: 70rpx;
+    color: #ccc;
+}
+.address .lf .icon {
+      font-size: 48rpx;
+      color: #2574EB;
+}
+.address .ad-info .ad-item {
+    width: 100%;
+}
+.address .ad-info .ad-item .name {
+      margin-right: 20rpx;
+      font-weight: 600;
+}
+.address .ad-info .ad-item.ad {
+      margin: 14rpx 0;
+      color: red;
+}
+.address .ad-info .ad-item .icon {
+      font-size: 56rpx;
+      margin-left: 20rpx;
+      line-height: 32rpx;
+      color: #ccc;
+}
+.no-adress {
+  height: 80rpx;
+  padding: 0 30rpx;
+}
+.no-adress .icon {
+    font-size: 56rpx;
+    color: #ccc;
+}
+.scroll-ct {
+  height: 0;
+}
+.scroll-ct .list {
+    padding: 30rpx;
+}
+.scroll-ct .list .list-item {
+      margin-bottom: 20rpx;
+}
+.scroll-ct .list .list-item .pic {
+        margin-right: 20rpx;
+}
+.scroll-ct .list .list-item .pic image {
+          height: 190rpx;
+          width: 190rpx;
+}
+.scroll-ct .list .list-item .i-info {
+        width: 0;
+}
+.scroll-ct .list .list-item .i-info .tt {
+          font-size: 30rpx;
+          font-weight: 600;
+}
+.scroll-ct .list .list-item .i-info .spec {
+          margin: 18rpx 0;
+}
+.scroll-ct .list .list-item .i-info .price {
+          color: red;
+          font-weight: 600;
+}
+.buy-btn {
+  height: 160rpx;
+  padding: 0 50rpx;
+}
+.buy-btn .coustom {
+    width: 100%;
+    height: 68rpx;
+    line-height: 68rpx;
+    text-align: center;
+    color: #fff;
+    background: #2574EB;
+}
+.buy-btn .coustom.opt {
+      opacity: .8;
+}
+
