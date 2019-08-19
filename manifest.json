@@ -80,8 +80,15 @@
         /* 小程序特有相关 */
         "appid" : "wxd0bdf500464e1268",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "minified" : true,
+            "es6" : true
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "位置展示"
+            }
+        }
     }
 }

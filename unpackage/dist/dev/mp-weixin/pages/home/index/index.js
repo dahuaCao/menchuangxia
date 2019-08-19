@@ -204,6 +204,14 @@ var _vuex = __webpack_require__(/*! vuex */ 6);function _objectSpread(target) {f
       dataObj: {} };
 
   },
+  onNavigationBarButtonTap: function onNavigationBarButtonTap() {
+    console.log(11122);
+    this.selectArea();
+  },
+  onNavigationBarSearchInputClicked: function onNavigationBarSearchInputClicked() {
+    console.log(223);
+    this.goDetail(1);
+  },
   onLoad: function onLoad() {var _this2 = this;
     var _this = this;
     this.$http.request({

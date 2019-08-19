@@ -82,14 +82,6 @@
 			this.getAuth();
 			// #endif
 		},
-		
-		onNavigationBarButtonTap(){
-			console.log(11122)
-		},
-		onNavigationBarSearchInputClicked(){
-			console.log(223)
-		},
-		
 		methods: {
 			// #ifdef APP-PLUS
 			clearInput: function(event) {

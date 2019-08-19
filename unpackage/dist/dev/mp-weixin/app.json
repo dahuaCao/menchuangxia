@@ -64,5 +64,10 @@
   "networkTimeout": {
     "request": 9000
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "位置展示"
+    }
+  },
   "usingComponents": {}
 }

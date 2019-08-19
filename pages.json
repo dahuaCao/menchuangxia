@@ -54,8 +54,8 @@
 							"align": "center",
 							"backgroundColor": "#F5F5F5",
 							"borderRadius": "6px",
-							"placeholder": "产品搜索"
-							// "disabled": true
+							"placeholder": "产品搜索",
+							"disabled": true
 						},
 						"buttons": [{
 								"color": "#FFFFFF",
@@ -64,9 +64,6 @@
 								"select": true,
 								"width": "auto",
 								"fontSize": "18px"
-							},
-							{
-
 							}
 						]
 					}
