@@ -98,11 +98,9 @@
 			};
 		},
 		onNavigationBarButtonTap(){
-			console.log(11122)
 			this.selectArea();
 		},
 		onNavigationBarSearchInputClicked(){
-			console.log(223)
 			this.goDetail(1);
 		},
 		onLoad() {

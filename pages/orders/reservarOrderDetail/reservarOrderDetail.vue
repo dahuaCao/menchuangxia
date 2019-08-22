@@ -80,26 +80,39 @@
 								</block>
 							</view>
 						</view>
-						<view class="dra-pic" v-if="orderType == '2'&&item.bluePrint">
-							<view class="tt">图纸</view>
-							<view class="pc-c">
-								<block v-for="(item1,index1) in item.bluePrint" :key = "index1">
-									<view class="pic" @tap="preImage(item1)">
-										<image :src="item1" mode="scaleToFill"></image>
-									</view>
-								</block>
-							</view>	
+						<view class="pics">
+							<view class="dra-pic" v-if="orderType != '1'&&item.bluePrint">
+								<view class="tt">图纸</view>
+								<view class="pc-c">
+									<block v-for="(item1,index1) in item.bluePrint" :key = "index1">
+										<view class="pic" @tap="preImage(item1)">
+											<image :src="item1" mode="scaleToFill"></image>
+										</view>
+									</block>
+								</view>	
+							</view>
+							<view class="ori-pic" v-if="orderType != '1'&&item.originPicture">
+								<view class="tt">图纸</view>
+								<view class="pc-c">
+									<block v-for="(item1,index1) in item.originPicture" :key = "index1">
+										<view class="pic" @tap="preImage(item1)">
+											<image :src="item1" mode="scaleToFill"></image>
+										</view>
+									</block>
+								</view>	
+							</view>
+							<view class="ori-pic" v-if="orderType != '1'&&item.completePicture">
+								<view class="tt">完工图纸</view>
+								<view class="pc-c">
+									<block v-for="(item1,index1) in item.completePicture" :key = "index1">
+										<view class="pic" @tap="preImage(item1)">
+											<image :src="item1" mode="scaleToFill"></image>
+										</view>
+									</block>
+								</view>	
+							</view>
 						</view>
-						<view class="ori-pic" v-if="orderType == '2'&&item.originPicture">
-							<view class="tt">图纸</view>
-							<view class="pc-c">
-								<block v-for="(item1,index1) in item.originPicture" :key = "index1">
-									<view class="pic" @tap="preImage(item1)">
-										<image :src="item1" mode="scaleToFill"></image>
-									</view>
-								</block>
-							</view>	
-						</view>
+						
 						<view class="subtotal mb-flex mb-flex-h-bt" v-if="orderType =='2'">
 							<view class="text">小  计:</view>
 							<view class="cacul-price" >
@@ -276,6 +289,18 @@
 			hideCoupon(){
 				this.showCouPon = false;
 			},
+			noticeTrail(){
+				let _this = this;
+				this.$http.request({
+					url:this.$api.PayNotify,
+					data:{
+						orderId:_this.orderId
+					},
+					method:'POST'
+				}).then(res => {
+					
+				})
+			},
 			pay(){
 				console.log('zhifu')
 				let _this = this;
@@ -329,9 +354,13 @@
 				    paySign: pay.paySign,
 				    success: (res) => {
 						console.log(res)
+						this.noticeTrail();
 				        uni.showToast({
 				            title: "感谢您的赞助!"
 				        })
+						uni.navigateBack({
+							
+						});
 				    },
 				    fail: (res) => {
 				        uni.showModal({
@@ -461,6 +490,9 @@
 							}
 						}
 					}
+				}
+				.pics{
+					margin-bottom: 40upx;
 				}
 				.dra-pic,.ori-pic{
 					.pc-c{

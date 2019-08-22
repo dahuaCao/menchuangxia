@@ -105,7 +105,10 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var timeLine = function timeLine() {return __webpack_require__.e(/*! import() | components/timeLine */ "components/timeLine").then(__webpack_require__.bind(null, /*! @/components/timeLine.vue */ 205));};var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ 212));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var timeLine = function timeLine() {return __webpack_require__.e(/*! import() | components/timeLine */ "components/timeLine").then(__webpack_require__.bind(null, /*! @/components/timeLine.vue */ 236));};var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ 243));};var _default =
+
+
+
 
 
 
@@ -166,12 +169,18 @@ __webpack_require__.r(__webpack_exports__);
   onLoad: function onLoad(option) {
     if (option.orderType) {
       this.orderType = option.orderType;
-      console.log(this.orderType);
+
       this.setNavBar();
     }
-    this.queryOrder();
+    if (this.orderType != '4' && this.orderType != '5') {
+      this.queryOrder();
+    }
   },
-
+  onShow: function onShow() {
+    if (this.orderType == '4' || this.orderType == '5') {
+      this.queryOrder();
+    }
+  },
   methods: {
     queryOrder: function queryOrder() {var _this2 = this;
       var _this = this;
@@ -195,6 +204,10 @@ __webpack_require__.r(__webpack_exports__);
       var title = "待付款";
       if (this.orderType == '3') {
         title = '待安装/待维修';
+      } else if (this.orderType == '4') {
+        title = '待评价';
+      } else if (this.orderType == '5') {
+        title = '已完成';
       }
       uni.setNavigationBarTitle({
         title: title });
@@ -227,6 +240,16 @@ __webpack_require__.r(__webpack_exports__);
       console.log('评价评价');
       uni.navigateTo({
         url: '../makeComment/makeComment?orderId=' + orderId });
+
+    },
+    complain: function complain(orderId) {
+      uni.navigateTo({
+        url: '../complaint/complaint?orderId=' + orderId });
+
+    },
+    applyInvoice: function applyInvoice(orderId, orderAmount) {
+      uni.navigateTo({
+        url: '../openInvoice/openInvoice?orderId=' + orderId + '&orderAmount=' + orderAmount });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

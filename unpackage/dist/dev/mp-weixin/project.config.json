@@ -30,9 +30,9 @@
       "list": [
         {
           "name": "swiper",
-          "query": "orderId=201908131005189363",
+          "query": "orderId=201908211504432222",
           "id": 0,
-          "pathName": "pages/orders/makeComment/makeComment"
+          "pathName": "pages/orders/openInvoice/openInvoice"
         },
         {
           "name": "test",

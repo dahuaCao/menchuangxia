@@ -61,6 +61,7 @@
 		},
 		onLoad(option){
 			if(option.orderId){
+				console.log(option.orderId)
 				this.orderId = option.orderId;
 			}
 		},
@@ -92,7 +93,6 @@
 						imgArr.push(item)
 					}
 				})
-				
 				if(imgArr.length == res.length){
 					console.log('上传完毕')
 					this.upImgArr = imgArr;

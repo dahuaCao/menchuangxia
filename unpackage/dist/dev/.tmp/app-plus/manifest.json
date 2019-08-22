@@ -98,7 +98,7 @@
         }
       }
     },
-    "arguments": "{\"name\":\"swiper\",\"query\":\"orderId=201908131005189363\",\"id\":0,\"pathName\":\"pages/orders/makeComment/makeComment\"}",
+    "arguments": "{\"name\":\"swiper\",\"query\":\"orderId=201908131005189363\",\"id\":0,\"pathName\":\"pages/mine/suggestion/suggestion\"}",
     "allowsInlineMediaPlayback": true,
     "safearea": {
       "background": "#FFFFFF",

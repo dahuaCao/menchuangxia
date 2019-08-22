@@ -175,65 +175,65 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _utils = _interopRequireDefault(__webpack_require__(/*! ../../common/utils.js */ 22));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default = { data: function data() {return {// isCanUse: uni.getStorageSync('isCanUse')||true//默认为true
-    };}, onLoad: function onLoad() {console.log(1231);}, onShow: function onShow() {this.getAuth();}, methods: {
+var _vuex = __webpack_require__(/*! vuex */ 6);
+var _utils = _interopRequireDefault(__webpack_require__(/*! ../../common/utils.js */ 22));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
+{
+  data: function data() {
+    return {
+
+      // isCanUse: uni.getStorageSync('isCanUse')||true//默认为true
+    };
+
+
+
+
+
+
+
+
+
+
+  },
+  onLoad: function onLoad() {
+    console.log(1231);
+  },
+  onShow: function onShow() {
+
+    this.getAuth();
+
+  },
+  methods: _objectSpread({},
+  (0, _vuex.mapMutations)(['login']), {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -369,7 +369,7 @@ var _default = { data: function data() {return {// isCanUse: uni.getStorageSync(
     },
 
 
-    userLogin: function userLogin(userInfo) {var code = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';var encryptedData = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';var iv = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+    userLogin: function userLogin(userInfo) {var _this2 = this;var code = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';var encryptedData = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';var iv = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
 
       var _this = this;
       _this.$http.request({
@@ -384,8 +384,8 @@ var _default = { data: function data() {return {// isCanUse: uni.getStorageSync(
 
       then(function (res) {
         //本地存储token
-        console.log(res);
         if (res.errno != '-1') {
+          _this2.login(res.data);
           uni.setStorageSync("X-MCB-Token", res.data.token);
           uni.switchTab({
             "url": "/pages/home/index/index" });
@@ -395,7 +395,7 @@ var _default = { data: function data() {return {// isCanUse: uni.getStorageSync(
       });
 
 
-    } } };exports.default = _default;
+    } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

@@ -20,7 +20,11 @@
     "pages/orders/reservatOrders/reservatOrders",
     "pages/orders/reservarOrderDetail/reservarOrderDetail",
     "pages/orders/makeComment/makeComment",
-    "pages/mine/coupons/coupons"
+    "pages/mine/coupons/coupons",
+    "pages/mine/suggestion/suggestion",
+    "pages/mine/erweima/erweima",
+    "pages/orders/complaint/complaint",
+    "pages/orders/openInvoice/openInvoice"
   ],
   "subPackages": [],
   "window": {
@@ -62,7 +66,7 @@
     ]
   },
   "networkTimeout": {
-    "request": 9000
+    "request": 5000
   },
   "permission": {
     "scope.userLocation": {

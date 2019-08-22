@@ -123,7 +123,20 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var CaculPrice = function CaculPrice() {return __webpack_require__.e(/*! import() | components/caculPrice */ "components/caculPrice").then(__webpack_require__.bind(null, /*! @/components/caculPrice.vue */ 219));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var CaculPrice = function CaculPrice() {return __webpack_require__.e(/*! import() | components/caculPrice */ "components/caculPrice").then(__webpack_require__.bind(null, /*! @/components/caculPrice.vue */ 250));};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -401,6 +414,18 @@ __webpack_require__.r(__webpack_exports__);
     hideCoupon: function hideCoupon() {
       this.showCouPon = false;
     },
+    noticeTrail: function noticeTrail() {
+      var _this = this;
+      this.$http.request({
+        url: this.$api.PayNotify,
+        data: {
+          orderId: _this.orderId },
+
+        method: 'POST' }).
+      then(function (res) {
+
+      });
+    },
     pay: function pay() {
       console.log('zhifu');
       var _this = this;
@@ -454,8 +479,12 @@ __webpack_require__.r(__webpack_exports__);
         paySign: pay.paySign,
         success: function success(res) {
           console.log(res);
+          _this4.noticeTrail();
           uni.showToast({
             title: "感谢您的赞助!" });
+
+          uni.navigateBack({});
+
 
         },
         fail: function fail(res) {

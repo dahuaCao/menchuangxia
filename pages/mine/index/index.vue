@@ -1,13 +1,16 @@
 <template>
 	<view class="mb-wrap">
 		<view class="pos-bg"></view>
-		<view class="personal-info mb-flex">
+		<view class="personal-info mb-flex" @tap="erweima">
 			<view class="info-lf mb-flex mb-form-item">
 				<view class="info-img">
-					<view class="icon iconfont icongerenzhongxinxuanzhong"></view>
+					<view v-if="userInfo.avatar" class="image">
+						<image :src="userInfo.avatar" mode=""></image>
+					</view>
+					<view v-else class="icon iconfont icongerenzhongxinxuanzhong"></view>
 				</view>
 				<view class="info-c mb-flex mb-flex-column mb-form-item">
-					<view class="name">王二麻子</view>
+					<view class="name">{{userInfo.nickname?userInfo.nickname:'游客'}}</view>
 					<view class="adr">地址:时代天街A楼B座</view>
 				</view>
 			</view>
@@ -50,15 +53,18 @@
 					</view>
 				</view>
 			</navigator>
-			<view class="list-cell mb-flex mb-flex-h-bt mb-flex-v-center">
-				<view class="list-lf mb-flex mb-flex-v-center">
-					<view class="icon iconfont iconyijianfankui yj-fg"></view>
-					<view class="">意见反馈</view>
+			<navigator url="../suggestion/suggestion">
+				<view class="list-cell mb-flex mb-flex-h-bt mb-flex-v-center">
+					<view class="list-lf mb-flex mb-flex-v-center">
+						<view class="icon iconfont iconyijianfankui yj-fg"></view>
+						<view class="">意见反馈</view>
+					</view>
+					<view class="lsit-rf">
+						<view class="icon iconfont iconjiantou arrow"></view>
+					</view>
 				</view>
-				<view class="lsit-rf">
-					<view class="icon iconfont iconjiantou arrow"></view>
-				</view>
-			</view>
+			</navigator>
+			
 			<view class="list-cell mb-flex mb-flex-h-bt mb-flex-v-center">
 				<view class="list-lf mb-flex mb-flex-v-center">
 					<view class="icon iconfont iconshouyi- profit"></view>
@@ -91,11 +97,25 @@
 </template>
 
 <script>
+	import {mapState} from 'vuex';
 	export default {
 		data() {
 			return {
 				
 			};
+		},
+		computed:{
+			...mapState(['userInfo'])
+		},
+		onLoad(){
+			console.log(this.userInfo)
+		},
+		methods:{
+			erweima(){
+				uni.navigateTo({
+					url:'../erweima/erweima'
+				})
+			}
 		}
 	}
 </script>
@@ -117,6 +137,13 @@
 				width: 138upx;
 				// background: chocolate;
 				margin-right: 30upx;
+				.image{
+					image{
+						height: 138upx;
+						width: 138upx;
+						border-radius: 100%;
+					}	
+				}
 				.icon{
 					font-size: 144upx;
 					color: #2574EB;
@@ -126,6 +153,9 @@
 				padding-top: 10upx;
 				line-height: 1.8;
 				width: 0;
+				.name{
+					font-weight: 600;
+				}
 			}
 		}
 		.info-rf{

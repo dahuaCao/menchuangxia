@@ -26,6 +26,9 @@
 							<view v-if="orderType== '1' || (orderType == '2'&& item.status == '待支付定金')" class="cancel-btn btn-item" hover-class="click" @tap.stop="deleOrder(item.orderId)">取消订单</view>
 							<view class="pay-btn btn-item" hover-class="click" v-if="orderType == '2'">{{item.status == '待支付定金'?'支付定金':'支付尾款'}}</view>
 							<view v-if="orderType == '4'" class="pay-btn btn-item" @tap.stop="evaluate(item.orderId)" hover-class="click" >评　　价</view>
+							<view v-if="orderType == '5'" class="pay-btn btn-item" @tap.stop="applyInvoice(item.orderId,item.orderAmount)" hover-class="click" >申请开票</view>
+							<view v-if="orderType == '5'" class="pay-btn btn-item" @tap.stop="complain(item.orderId)" hover-class="click" >投　　诉</view>
+							<view v-if="orderType == '5'" class="pay-btn btn-item" @tap.stop="evaluate(item.orderId)" hover-class="click" >售后服务</view>
 						</view>
 						<time-line :status="item.status" :travel="item.orderTrail"></time-line>
 					</view>
@@ -59,12 +62,18 @@
 		onLoad(option) {
 			if(option.orderType){
 				this.orderType = option.orderType;
-				console.log(this.orderType)
+				
 				this.setNavBar();
 			}
-			this.queryOrder();
+			if(this.orderType != '4'&& this.orderType != '5'){
+				this.queryOrder();
+			}
 		},
-
+		onShow() {
+			if(this.orderType == '4'||this.orderType == '5'){
+				this.queryOrder();
+			}
+		},
 		methods: {
 			queryOrder() {
 				let _this = this;
@@ -88,6 +97,10 @@
 				let title = "待付款";
 				if(this.orderType == '3'){
 					title = '待安装/待维修'
+				}else if(this.orderType == '4'){
+					title = '待评价'
+				}else if(this.orderType == '5'){
+					title = '已完成'
 				}
 				uni.setNavigationBarTitle({
 					title:title
@@ -120,6 +133,16 @@
 				console.log('评价评价')
 				uni.navigateTo({
 					url:'../makeComment/makeComment?orderId='+orderId
+				})
+			},
+			complain(orderId){
+				uni.navigateTo({
+					url:'../complaint/complaint?orderId='+orderId
+				})
+			},
+			applyInvoice(orderId,orderAmount){
+				uni.navigateTo({
+					url:'../openInvoice/openInvoice?orderId='+orderId+'&orderAmount='+orderAmount
 				})
 			}
 		}

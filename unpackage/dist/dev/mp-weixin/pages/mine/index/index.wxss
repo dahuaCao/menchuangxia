@@ -40,6 +40,11 @@ page {
     width: 138rpx;
     margin-right: 30rpx;
 }
+.personal-info .info-lf .info-img .image image {
+      height: 138rpx;
+      width: 138rpx;
+      border-radius: 100%;
+}
 .personal-info .info-lf .info-img .icon {
       font-size: 144rpx;
       color: #2574EB;
@@ -48,6 +53,9 @@ page {
     padding-top: 10rpx;
     line-height: 1.8;
     width: 0;
+}
+.personal-info .info-lf .info-c .name {
+      font-weight: 600;
 }
 .personal-info .info-rf {
     width: 100rpx;

@@ -56,6 +56,7 @@
 </template>
 
 <script>
+	import {mapMutations} from 'vuex';
 	import Utils from '../../common/utils.js'
 	export default {
 		data() {
@@ -83,6 +84,7 @@
 			// #endif
 		},
 		methods: {
+			...mapMutations(['login']),
 			// #ifdef APP-PLUS
 			clearInput: function(event) {
 				if (this.mobileCode.length > 0) {
@@ -130,24 +132,22 @@
 				})					
 			},	
 			getuserinfo() {
-				console.log('APP微信登录')
+				// console.log('APP微信登录')
 				let _this = this;
 				uni.getProvider({
 					service: 'oauth',
 					success: function(res) {
-						console.log(JSON.stringify(res))
+						// console.log(JSON.stringify(res))
 						if (~res.provider.indexOf('weixin')) {
+						
 							uni.login({
 								provider: 'weixin',
 								success: function(loginRes) {
-									console.log("loginRes: " + JSON.stringify(loginRes));
 									//获取用户信息
 									uni.getUserInfo({
 										provider: 'weixin',
 										success:function (res) {
-											// console.log("resxinx: " + JSON.stringify(res));
 											let useInfo = Object.assign({access_token:loginRes.authResult['access_token']},JSON.parse(res.rawData))
-											console.log("useInfo: " + JSON.stringify(useInfo));
 											_this.userLogin(JSON.stringify(useInfo),loginRes.code)
 										}
 									})
@@ -265,8 +265,8 @@
 					}
 				}).then(res => {
 					//本地存储token
-					console.log(res)
 					if(res.errno != '-1'){
+						this.login(res.data);
 						uni.setStorageSync("X-MCB-Token", res.data.token);
 						uni.switchTab({
 							"url": "/pages/home/index/index"

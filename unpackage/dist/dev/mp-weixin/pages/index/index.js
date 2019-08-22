@@ -105,26 +105,35 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniDialog = function uniDialog() {return __webpack_require__.e(/*! import() | components/uni-dialog/uni-dialog */ "components/uni-dialog/uni-dialog").then(__webpack_require__.bind(null, /*! @/components/uni-dialog/uni-dialog.vue */ 221));};var _default =
+
+
+
+
+
+
+
+
+
+
+
 {
+  components: {
+    uniDialog: uniDialog },
+
   data: function data() {
     return {
-      title: 'Hello' };
+      title: 'Hello',
+      content: "您好！感谢使用门窗宝平台，售后服务请下载门窗宝APP申请售后流程，如有疑问，请拨打客服热线4000-0000" };
 
   },
   onLoad: function onLoad() {
 
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    showMask: function showMask() {
+
+    } } };exports.default = _default;
 
 /***/ }),
 

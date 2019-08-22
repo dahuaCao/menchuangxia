@@ -1,1 +1,1 @@
-<view class="content"><image class="logo" src="/static/logo.png"></image><view><text class="title">{{title}}</text></view></view>
+<view data-event-opts="{{[['tap',[['showMask',['$event']]]]]}}" class="content" bindtap="__e"><image class="logo" src="/static/logo.png"></image><view><text class="title">{{title}}</text></view><uni-dialog vue-id="1" bind:__l="__l"></uni-dialog></view>

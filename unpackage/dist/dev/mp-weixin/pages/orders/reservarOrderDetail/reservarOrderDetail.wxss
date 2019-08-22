@@ -104,6 +104,9 @@
 .order-content .product-info .bd .bd-item .bd-h .item .item-r {
           width: 0;
 }
+.order-content .product-info .bd .pics {
+      margin-bottom: 40rpx;
+}
 .order-content .product-info .bd .dra-pic .pc-c, .order-content .product-info .bd .ori-pic .pc-c {
       overflow: hidden;
 }

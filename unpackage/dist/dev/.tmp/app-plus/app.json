@@ -20,7 +20,8 @@
     "pages/orders/reservatOrders/reservatOrders",
     "pages/orders/reservarOrderDetail/reservarOrderDetail",
     "pages/orders/makeComment/makeComment",
-    "pages/mine/coupons/coupons"
+    "pages/mine/coupons/coupons",
+    "pages/mine/suggestion/suggestion"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -61,7 +62,7 @@
     ]
   },
   "networkTimeout": {
-    "request": 9000
+    "request": 5000
   },
   "nvueCompiler": "weex",
   "renderer": "auto",

@@ -2,7 +2,7 @@
 	<view class="image-upload">
 		<view class="upload-head">
 			<view class="tit">{{title}}</view>
-			<view>{{upload_picture_list.length}}/{{maxNumber}}</view>
+			<view>{{upload_picture_list.length}}/{{upImgConfig.maxCount}}</view>
 		</view>
 		<view class="upload-body">
 			<view class="upload-files">
@@ -90,15 +90,12 @@
 			sizeType: ['compressed', 'original'],
 			count: config.count - _this.upload_picture_list.length > 0 ? config.count - _this.upload_picture_list.length : 0 ,
 			success:async (res) => {
-				console.log(res)
 				for (let i = 0, len = res.tempFiles.length; i < len; i++) {
 					res.tempFiles[i]['upload_percent'] = 0;
 					res.tempFiles[i]['path_server'] = '';
 					res.tempFiles[i]['server_path'] = '';
 					_this.upload_picture_list.push(res.tempFiles[i]);
-					// _this.upload_picture_list.length > config.count ? _this.upload_picture_list = _this.upload_picture_list.slice(
-					// 	0,
-					// 	config.count) : '';
+					
 				}
 				// 过滤多出的预览图片
 				if(configs.autoUpload){
@@ -131,12 +128,18 @@
 	}
 	// 上传图片(通用)
 	const uImage = async (_this, configs) => {
-		
-		for (let i = 0, len = _this.upload_picture_list.length; i < len; i++) {
-			if (_this.upload_picture_list[i]['upload_percent'] == 0) {
-				await upload_file_server(_this, configs, _this.upload_picture_list, i)
+		console.log(configs.multiply)
+		if(configs.multiply){
+			console.log('多图上传')
+		}else{
+			for (let i = 0, len = _this.upload_picture_list.length; i < len; i++) {
+				if (_this.upload_picture_list[i]['upload_percent'] == 0) {
+					await upload_file_server(_this, configs, _this.upload_picture_list, i)
+				}
 			}
 		}
+		
+		
 	}
 	// 上传文件
 	const upload_file_server = async (_this, configs, upload_picture_list, j) => {

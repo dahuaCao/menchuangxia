@@ -185,7 +185,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 6);function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var imageLoader = function imageLoader() {return __webpack_require__.e(/*! import() | components/imageLoader */ "components/imageLoader").then(__webpack_require__.bind(null, /*! @/components/imageLoader.vue */ 190));};var _default =
+var _vuex = __webpack_require__(/*! vuex */ 6);function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var imageLoader = function imageLoader() {return __webpack_require__.e(/*! import() | components/imageLoader */ "components/imageLoader").then(__webpack_require__.bind(null, /*! @/components/imageLoader.vue */ 214));};var _default =
 
 
 
@@ -205,11 +205,9 @@ var _vuex = __webpack_require__(/*! vuex */ 6);function _objectSpread(target) {f
 
   },
   onNavigationBarButtonTap: function onNavigationBarButtonTap() {
-    console.log(11122);
     this.selectArea();
   },
   onNavigationBarSearchInputClicked: function onNavigationBarSearchInputClicked() {
-    console.log(223);
     this.goDetail(1);
   },
   onLoad: function onLoad() {var _this2 = this;

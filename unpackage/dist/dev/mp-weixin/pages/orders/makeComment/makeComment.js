@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _utils = _interopRequireDefault(__webpack_require__(/*! @/common/utils.js */ 22));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniRate = function uniRate() {return __webpack_require__.e(/*! import() | components/uni-rate/uni-rate */ "components/uni-rate/uni-rate").then(__webpack_require__.bind(null, /*! @/components/uni-rate/uni-rate.vue */ 224));};var imageUpload = function imageUpload() {return Promise.all(/*! import() | components/image-upload/image-upload */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/image-upload/image-upload")]).then(__webpack_require__.bind(null, /*! @/components/image-upload/image-upload.vue */ 231));};var _default =
+var _utils = _interopRequireDefault(__webpack_require__(/*! @/common/utils.js */ 22));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniRate = function uniRate() {return __webpack_require__.e(/*! import() | components/uni-rate/uni-rate */ "components/uni-rate/uni-rate").then(__webpack_require__.bind(null, /*! @/components/uni-rate/uni-rate.vue */ 255));};var imageUpload = function imageUpload() {return Promise.all(/*! import() | components/image-upload/image-upload */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/image-upload/image-upload")]).then(__webpack_require__.bind(null, /*! @/components/image-upload/image-upload.vue */ 262));};var _default =
 {
   components: {
     uniRate: uniRate,
@@ -168,6 +168,7 @@ var _utils = _interopRequireDefault(__webpack_require__(/*! @/common/utils.js */
   },
   onLoad: function onLoad(option) {
     if (option.orderId) {
+      console.log(option.orderId);
       this.orderId = option.orderId;
     }
   },
@@ -199,7 +200,6 @@ var _utils = _interopRequireDefault(__webpack_require__(/*! @/common/utils.js */
           imgArr.push(item);
         }
       });
-
       if (imgArr.length == res.length) {
         console.log('上传完毕');
         this.upImgArr = imgArr;
